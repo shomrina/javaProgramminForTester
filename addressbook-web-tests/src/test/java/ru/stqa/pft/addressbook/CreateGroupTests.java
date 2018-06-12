@@ -21,13 +21,9 @@ public class CreateGroupTests {
     @BeforeMethod
     public void setUp() throws Exception {
         FirefoxOptions options = new FirefoxOptions().setLegacy(true);
-        wd = new FirefoxDriver(options);  //явно указываем, что нужно использовать старую схему запуска
-        //без неё нужно устанавливатьь гекодрайвер и прописывать Path (https://selenium2.ru/news/188-firefox-esr-52.html and https://selenium2.ru/news/188-firefox-esr-52.html)
+        wd = new FirefoxDriver(options);  //явно указываем, что нужно использовать старую схему запуска. без неё нужно устанавливатьь гекодрайвер и прописывать Path (https://selenium2.ru/news/188-firefox-esr-52.html and https://selenium2.ru/news/188-firefox-esr-52.html)
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
-    
-    @Test
-    public void CreateGroupTests() {
+
         wd.get("http://localhost/addressbook/");
         wd.findElement(By.name("user")).click();
         wd.findElement(By.name("user")).clear();
@@ -36,6 +32,11 @@ public class CreateGroupTests {
         wd.findElement(By.name("pass")).clear();
         wd.findElement(By.name("pass")).sendKeys("secret");
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    }
+    
+    @Test
+    public void testGroupCreation() {
+
         wd.findElement(By.linkText("groups")).click();
         wd.findElement(By.name("new")).click();
         wd.findElement(By.name("group_name")).click();
