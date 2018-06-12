@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook;
 
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -19,7 +20,9 @@ public class CreateGroupTests {
     
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
+        FirefoxOptions options = new FirefoxOptions().setLegacy(true);
+        wd = new FirefoxDriver(options);  //явно указываем, что нужно использовать старую схему запуска
+        //без неё нужно устанавливатьь гекодрайвер и прописывать Path (https://selenium2.ru/news/188-firefox-esr-52.html and https://selenium2.ru/news/188-firefox-esr-52.html)
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
     
