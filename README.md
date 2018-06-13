@@ -6,7 +6,7 @@ There is in project "wrapper gradle" has been installed. Therefore you don't nee
 You need to download this project with all folders and then you need to open your command line (cmd), to get the project path and type here something like:
 gradlew build.
   For example: <c:\Program Files\GitHub\sandbox>gradlew build,
-  where <c:\Program Files\GitHub\sandbox> = <your path to project>.
+  where <c:\Program Files\GitHub\sandbox> = your path to project.
   Finally, Gradle will instal automatically before execute program.
   You need to use comand "gradlew build" only one times. Then you need to use command "gradlew run". The project will use setuped tool.
   
