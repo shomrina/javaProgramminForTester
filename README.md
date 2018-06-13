@@ -2,8 +2,8 @@
 this repository contains programm tasks on Java for testers. For education
 gradle
 
-There is "wrapper gradle" has been installed. Therefore you don't need to install Gradle.
-You need to download this project with all folders and then you need open your command line (cmd), to get the project path and type here something like:
+There is in project "wrapper gradle" has been installed. Therefore you don't need to install Gradle.
+You need to download this project with all folders and then you need to open your command line (cmd), to get the project path and type here something like:
 gradlew build.
   For example: <c:\Program Files\GitHub\sandbox>gradlew build
   where <c:\Program Files\GitHub\sandbox> - <your path to project>
