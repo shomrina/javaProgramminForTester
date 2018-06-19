@@ -1,6 +1,5 @@
 package ru.stqa.pft.addressbook.appmanager;
 
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -9,18 +8,10 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     FirefoxDriver wd;
 
-    private NavidationHelper navidationHelper;
+    private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
     private SessionHelper sessionHelper;
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
 
     public void init() {
         FirefoxOptions options = new FirefoxOptions().setLegacy(true);
@@ -29,7 +20,7 @@ public class ApplicationManager {
 
         wd.get("http://localhost/addressbook/");
         groupHelper = new GroupHelper(wd); //чтобы получить ссылку на вебдрайвер конструируется внутри метода инит
-        navidationHelper = new NavidationHelper(wd);
+        navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login("admin", "secret");
     }
@@ -44,7 +35,7 @@ public class ApplicationManager {
         return groupHelper;
     }
 
-    public NavidationHelper getNavidationHelper() {
-        return navidationHelper;
+    public NavigationHelper getNavigationHelper() {
+        return navigationHelper;
     }
 }
