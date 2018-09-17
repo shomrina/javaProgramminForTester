@@ -7,8 +7,8 @@ You need to download this project with all folders and then you need to open you
 gradlew build.
   For example: <c:\Program Files\GitHub\sandbox>gradlew build,
   where <c:\Program Files\GitHub\sandbox> = your path to project.
-  Finally, Gradle will instal automatically before execute program.
-  You need to use comand "gradlew build" only one times. Then you need to use command "gradlew run". The project will use setuped tool.
+  Finally, Gradle will install automatically before execute program.
+  You need to use comand "gradlew build" only one time. Then you need to use command "gradlew run". The project will use setuped tool.
   
   //
   Поскольку мой английский пока хромает, кратко об основной сути.
